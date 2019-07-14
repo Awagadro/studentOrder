@@ -1,14 +1,12 @@
 package edu.dkravchuk.studentorder.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.dkravchuk.studentorder.config.Config;
 import edu.dkravchuk.studentorder.domain.CountryArea;
 import edu.dkravchuk.studentorder.domain.PassportOffice;
 import edu.dkravchuk.studentorder.domain.RegisterOffice;
@@ -23,9 +21,8 @@ public class DictionaryDaoImpl implements DictionaryDao {
 	private static final String GET_AREA = "SELECT * FROM jc_country_struct WHERE area_id LIKE ? and area_id<>?";;
 
 	private Connection getConnection() throws SQLException {
-		Connection con = DriverManager.getConnection(Config.getProperty(Config.DB_URL),
-				Config.getProperty(Config.DB_LOGIN), Config.getProperty(Config.DB_PASSWORD));
-		return con;
+		
+		return ConnectionBuilder.getConnection();
 
 	}
 

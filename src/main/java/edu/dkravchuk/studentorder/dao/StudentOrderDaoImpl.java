@@ -1,7 +1,6 @@
 package edu.dkravchuk.studentorder.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -65,9 +64,7 @@ public class StudentOrderDaoImpl implements StudentOrderDao {
 			+ "WHERE student_order_status = ? ORDER BY so.student_order_id LIMIT ?";
 
 	private Connection getConnection() throws SQLException {
-		Connection con = DriverManager.getConnection(Config.getProperty(Config.DB_URL),
-				Config.getProperty(Config.DB_LOGIN), Config.getProperty(Config.DB_PASSWORD));
-		return con;
+		return ConnectionBuilder.getConnection();
 
 	}
 
