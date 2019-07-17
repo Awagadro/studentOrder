@@ -28,4 +28,9 @@ public class University {
 		this.universityName = univercityName;
 	}
 
+	@Override
+	public String toString() {
+		return "University [universityId=" + universityId + ", universityName=" + universityName + "]";
+	}
+
 }

@@ -94,4 +94,12 @@ public class StudentOrder {
 		children.add(child);
 	}
 
+	@Override
+	public String toString() {
+		return "StudentOrder [studentOrderId=" + studentOrderId + ", studentOrderDate=" + studentOrderDate
+				+ ", studentOrderStatus=" + studentOrderStatus + ", husband=" + husband + ", wife=" + wife
+				+ ", children=" + children + ", marriageCertificateId=" + marriageCertificateId + ", marriageDate="
+				+ marriageDate + ", registerOffice=" + registerOffice + "]";
+	}
+
 }

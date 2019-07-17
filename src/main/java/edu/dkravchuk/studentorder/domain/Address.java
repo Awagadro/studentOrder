@@ -60,4 +60,10 @@ public class Address {
 		this.apartment = apartment;
 	}
 
+	@Override
+	public String toString() {
+		return "Address [postCode=" + postCode + ", street=" + street + ", buildung=" + buildung + ", extension="
+				+ extension + ", apartment=" + apartment + "]";
+	}
+
 }

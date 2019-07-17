@@ -39,4 +39,10 @@ public class RegisterOffice {
 		this.officeName = officeName;
 	}
 
+	@Override
+	public String toString() {
+		return "RegisterOffice [officeId=" + officeId + ", officeAreaId=" + officeAreaId + ", officeName=" + officeName
+				+ "]";
+	}
+
 }

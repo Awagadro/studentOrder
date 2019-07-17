@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.dkravchuk.studentorder.domain.CountryArea;
 import edu.dkravchuk.studentorder.domain.PassportOffice;
 import edu.dkravchuk.studentorder.domain.RegisterOffice;
@@ -15,6 +18,8 @@ import edu.dkravchuk.studentorder.exception.DaoException;
 
 public class DictionaryDaoImpl implements DictionaryDao {
 
+	private static final Logger logger = LoggerFactory.getLogger(DictionaryDaoImpl.class);
+	
 	private static final String GET_STREET = "SELECT street_code, street_name FROM jc_street WHERE UPPER (street_name) LIKE UPPER (?)";
 	private static final String GET_PASSPORT = "SELECT * FROM jc_passport_office WHERE p_office_area_id=?";
 	private static final String GET_REGISTER = "SELECT * FROM jc_register_office WHERE r_office_area_id=?";
@@ -40,6 +45,7 @@ public class DictionaryDaoImpl implements DictionaryDao {
 			}
 
 		} catch (SQLException e) {
+			logger.error(e.getMessage(), e);
 			throw new DaoException(e);
 		}
 
@@ -61,6 +67,7 @@ public class DictionaryDaoImpl implements DictionaryDao {
 			}
 
 		} catch (SQLException e) {
+			logger.error(e.getMessage(), e);
 			throw new DaoException(e);
 		}
 
@@ -82,6 +89,7 @@ public class DictionaryDaoImpl implements DictionaryDao {
 			}
 
 		} catch (SQLException e) {
+			logger.error(e.getMessage(), e);
 			throw new DaoException(e);
 		}
 
@@ -107,6 +115,7 @@ public class DictionaryDaoImpl implements DictionaryDao {
 			}
 
 		} catch (SQLException e) {
+			logger.error(e.getMessage(), e);
 			throw new DaoException(e);
 		}
 
